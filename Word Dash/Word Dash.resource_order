@@ -107,6 +107,7 @@
     {"name":"load_word_list_txt_optimized","order":1,"path":"scripts/load_word_list_txt_optimized/load_word_list_txt_optimized.yy",},
     {"name":"play_letter_sound","order":11,"path":"scripts/play_letter_sound/play_letter_sound.yy",},
     {"name":"RetryGame","order":3,"path":"scripts/RetryGame/RetryGame.yy",},
+    {"name":"Scaling","order":5,"path":"scripts/Scaling/Scaling.yy",},
     {"name":"scr_tilebag","order":4,"path":"scripts/scr_tilebag/scr_tilebag.yy",},
     {"name":"scr_UI_Canvas","order":1,"path":"scripts/scr_UI_Canvas/scr_UI_Canvas.yy",},
     {"name":"scr_UI_Checkbox","order":2,"path":"scripts/scr_UI_Checkbox/scr_UI_Checkbox.yy",},

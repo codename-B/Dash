@@ -142,6 +142,7 @@
     {"id":{"name":"play_letter_sound","path":"scripts/play_letter_sound/play_letter_sound.yy",},},
     {"id":{"name":"Print","path":"scripts/Print/Print.yy",},},
     {"id":{"name":"RetryGame","path":"scripts/RetryGame/RetryGame.yy",},},
+    {"id":{"name":"Scaling","path":"scripts/Scaling/Scaling.yy",},},
     {"id":{"name":"scr_tilebag","path":"scripts/scr_tilebag/scr_tilebag.yy",},},
     {"id":{"name":"scr_UI_Button","path":"scripts/scr_UI_Button/scr_UI_Button.yy",},},
     {"id":{"name":"scr_UI_Canvas","path":"scripts/scr_UI_Canvas/scr_UI_Canvas.yy",},},
