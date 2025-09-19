@@ -19,6 +19,6 @@ _panel = new UIPanel("score", gap, gap, panel_width, panel_height, panel_border_
 _panel.setResizable(false)
 _panel.setMovable(false)
 _text = new UIText("score_text", panel_width/2, panel_height/2, "[c_black]SCORE");
-_score = new UIText("score_score", panel_width-24-4, panel_height-24, "[c_black][Kreon_Score][ha_right]0");
+_score = new UIText("score_score", panel_width-36, panel_height-24, "[c_black][Kreon_Score]0");
 _panel.add(_text);
 _panel.add(_score);

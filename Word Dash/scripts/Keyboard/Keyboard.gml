@@ -50,7 +50,7 @@ function ui_activate_confirm() {
 		audio_play_sound(Ding, 1.0, false);
         var score_ui = global.score_ui;
         score_ui._value += scr;
-        score_ui._score.setText("[c_black][Kreon_Score][ha_right]" + string(score_ui._value));
+        score_ui._score.setText("[c_black][Kreon_Score]" + string(score_ui._value));
     }
 
     var last_tile = get_rightmost_instance_pos(obj_tile_parent);

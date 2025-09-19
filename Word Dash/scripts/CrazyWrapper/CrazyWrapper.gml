@@ -9,7 +9,7 @@ function get_best_word() {
         for (var i = 0; i < array_length(global.words_played); i++) {
             var current_word = global.words_played[i];
             // Replace with your own criteria for "better word"
-            if (string_length(current_word) > string_length(best_word)) {
+            if (get_word_score_by_word(current_word) > get_word_score_by_word(best_word)) {
                 best_word = current_word;
                 // Override CrazyGames value if connected
                 if (crazy_started()) {

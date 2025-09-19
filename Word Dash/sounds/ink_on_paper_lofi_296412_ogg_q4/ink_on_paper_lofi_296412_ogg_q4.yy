@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"ink_on_paper_45s_seamless",
+  "%Name":"ink_on_paper_lofi_296412_ogg_q4",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":96,
-  "compression":3,
+  "bitRate":128,
+  "compression":0,
   "conversionMode":0,
-  "duration":45.0,
-  "name":"ink_on_paper_45s_seamless",
+  "duration":240.02402,
+  "name":"ink_on_paper_lofi_296412_ogg_q4",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"ink_on_paper_45s_seamless.ogg",
+  "soundFile":"ink_on_paper_lofi_296412_ogg_q4.ogg",
   "type":0,
   "volume":1.0,
 }

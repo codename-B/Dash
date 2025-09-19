@@ -201,7 +201,7 @@
     {"name":"death8","order":15,"path":"sounds/death8/death8.yy",},
     {"name":"death9","order":16,"path":"sounds/death9/death9.yy",},
     {"name":"Ding","order":8,"path":"sounds/Ding/Ding.yy",},
-    {"name":"ink_on_paper_45s_seamless","order":22,"path":"sounds/ink_on_paper_45s_seamless/ink_on_paper_45s_seamless.yy",},
+    {"name":"ink_on_paper_lofi_296412_ogg_q4","order":21,"path":"sounds/ink_on_paper_lofi_296412_ogg_q4/ink_on_paper_lofi_296412_ogg_q4.yy",},
     {"name":"negative_sound2","order":9,"path":"sounds/negative_sound2/negative_sound2.yy",},
     {"name":"typewriter2","order":1,"path":"sounds/typewriter2/typewriter2.yy",},
     {"name":"typewriter3","order":2,"path":"sounds/typewriter3/typewriter3.yy",},

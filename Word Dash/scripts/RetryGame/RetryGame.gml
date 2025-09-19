@@ -15,7 +15,7 @@ function RetryGame() {
     
 	var score_ui = global.score_ui
 	score_ui._value = 0
-	score_ui._score.setText("[c_black][Kreon_Score][ha_right]" + string(score_ui._value))
+	score_ui._score.setText("[c_black][Kreon_Score]" + string(score_ui._value))
     
     // 3. Reset the tile bag and draw a fresh hand for the player
     tilebag_build_from_master_and_shuffle();

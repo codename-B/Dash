@@ -73,7 +73,7 @@ for (var i = 0; i < tiles; i++) {
 	_tile.add(_text);
 	_tile._text = _text;
 	_tile._letter = hand_tile.letter
-	var _score = new UIText("hand_score_"+string(i), tile_w-16, tile_h-16, "[c_black][Kreon]" + string(hand_tile.value))
+	var _score = new UIText("hand_score_"+string(i), tile_w-24, tile_h-16, "[c_black][Kreon]" + string(hand_tile.value))
 	_tile.add(_score)
 	_tile._score = _score
 	_tile._value = hand_tile.value
@@ -96,7 +96,7 @@ for (var i = 0; i < tiles; i++) {
 	_tile.add(_text);
 	_tile._text = _text;
 	_tile._letter = "B"
-	var _score = new UIText("play_score_"+string(i), tile_w-16, tile_h-16, "[c_black][Kreon]0");
+	var _score = new UIText("play_score_"+string(i), tile_w-24, tile_h-16, "[c_black][Kreon]0");
 	_tile.add(_score)
 	_tile._score = _score
 	_tile._value = 0
@@ -148,7 +148,7 @@ _confirm.setCallback(UI_EVENT.LEFT_RELEASE, method(_confirm, function() {
 		}
 		if (!global.sound) {
 			global.sound = true
-			audio_play_sound(ink_on_paper_45s_seamless, 1.0, true)
+			audio_play_sound(ink_on_paper_lofi_296412_ogg_q4, 1.0, true)
 		}
 	}
 	if (global.failed) {
@@ -164,7 +164,7 @@ _confirm.setCallback(UI_EVENT.LEFT_RELEASE, method(_confirm, function() {
 		audio_play_sound(Ding, 1.0, false);
 		var score_ui = global.score_ui
 		score_ui._value += scr
-		score_ui._score.setText("[c_black][Kreon_Score][ha_right]" + string(score_ui._value))
+		score_ui._score.setText("[c_black][Kreon_Score]" + string(score_ui._value))
 	}
 	
 	var last_tile = get_rightmost_instance_pos(obj_tile_parent)
