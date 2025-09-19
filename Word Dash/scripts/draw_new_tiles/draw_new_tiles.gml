@@ -1,38 +1,12 @@
 function draw_new_tiles() {
-    // Put current word tiles back in hand before clearing
-    if (variable_global_exists("current_word_tiles")) {
-        for (var i = 0; i < array_length(global.current_word_tiles); i++) {
-            var tile = global.current_word_tiles[i];
-            if (instance_exists(tile)) {
-                // Find a hidden bottom tile to restore
-                for (var j = 0; j < array_length(global.tiles); j++) {
-                    var bottom_tile = global.tiles[j];
-                    if (!bottom_tile.getVisible() && !bottom_tile.getEnabled()) {
-                        // Restore this bottom tile with the removed tile's letter
-                        bottom_tile._text.setText("[c_black]" + tile.letter);
-                        bottom_tile._letter = tile.letter;
-                        bottom_tile._score.setText("[c_black][Kreon]" + string(tile.score));
-                        bottom_tile._value = tile.score;
-                        
-                        // Re-enable and reveal the tile
-                        bottom_tile.setVisible(true);
-                        bottom_tile.setEnabled(true);
-                        break;
-                    }
-                }
-                instance_destroy(tile);
-            }
-        }
-        global.current_word_tiles = [];
-    }
-    
-	// Count how many tiles are currently played (hidden bottom tiles)
+	// Count how many tiles are currently played (visible in top row)
     var played_count = 0;
     
-    for (var i = 0; i < array_length(global.tiles); i++) {
-        var bottom_tile = global.tiles[i];
-        if (!bottom_tile.getVisible()) {
+    for (var i = 0; i < array_length(global.tiles_to_play); i++) {
+        var top_tile = global.tiles_to_play[i];
+        if (top_tile.getVisible()) {
             played_count++;
+			top_tile.setVisible(false);
         }
     }
     
