@@ -33,12 +33,15 @@ function RetryGame() {
         var bottom_tile = global.tiles[i];
         var hand_tile_data = global.hand_tiles[i];
         
-        bottom_tile.setVisible(true);
-        bottom_tile.setEnabled(true);
-        bottom_tile._text.setText("[c_black]" + hand_tile_data.letter);
-        bottom_tile._score.setText("[c_black][Kreon]" + string(hand_tile_data.value));
-        bottom_tile._value = hand_tile_data.value;
-		bottom_tile._letter = hand_tile_data.letter;
+        // Safety check to ensure hand_tile_data is valid
+        if (hand_tile_data != undefined && hand_tile_data.letter != undefined && hand_tile_data.value != undefined) {
+            bottom_tile.setVisible(true);
+            bottom_tile.setEnabled(true);
+            bottom_tile._text.setText("[c_black]" + hand_tile_data.letter);
+            bottom_tile._score.setText("[c_black][Kreon]" + string(hand_tile_data.value));
+            bottom_tile._value = hand_tile_data.value;
+            bottom_tile._letter = hand_tile_data.letter;
+        }
     }
     
     // 5. Re-create the initial game world

@@ -3,7 +3,10 @@ function get_word_score(){
 	for(var i=0; i<array_length(global.tiles_to_play); i++) {
 		var tile = global.tiles_to_play[i];
 		if (tile.getVisible()) {
-			scr += tile._value;
+			// Safety check to ensure _value is defined and is a number
+			if (tile._value != undefined && is_real(tile._value)) {
+				scr += tile._value;
+			}
 		}
 	}
 	return scr;

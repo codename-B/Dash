@@ -20,19 +20,22 @@ function draw_new_tiles() {
             var bottom_tile = global.tiles[i];
             if (!bottom_tile.getVisible()) {
                 // This bottom tile was hidden (played), so update it with a new tile
-                var new_hand_tile = array_pop(new_tiles);              
-                // Update the tile's display with new letter and value
-                bottom_tile._text.setText("[c_black]" + new_hand_tile.letter);
-                bottom_tile._score.setText("[c_black][Kreon]" + string(new_hand_tile.value));
-                bottom_tile._value = new_hand_tile.value;
-				bottom_tile._letter = new_hand_tile.letter
-                
-                // Update the hand_tiles array
-                global.hand_tiles[i] = new_hand_tile;
-                
-                // Re-enable and reveal the tile
-                bottom_tile.setVisible(true);
-                bottom_tile.setEnabled(true);
+                var new_hand_tile = array_pop(new_tiles);
+                // Safety check to ensure new_hand_tile is valid
+                if (new_hand_tile != undefined && new_hand_tile.letter != undefined && new_hand_tile.value != undefined) {
+                    // Update the tile's display with new letter and value
+                    bottom_tile._text.setText("[c_black]" + new_hand_tile.letter);
+                    bottom_tile._score.setText("[c_black][Kreon]" + string(new_hand_tile.value));
+                    bottom_tile._value = new_hand_tile.value;
+                    bottom_tile._letter = new_hand_tile.letter
+                    
+                    // Update the hand_tiles array
+                    global.hand_tiles[i] = new_hand_tile;
+                    
+                    // Re-enable and reveal the tile
+                    bottom_tile.setVisible(true);
+                    bottom_tile.setEnabled(true);
+                }
             }
         }
     }

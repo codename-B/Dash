@@ -168,7 +168,12 @@ _confirm.setCallback(UI_EVENT.LEFT_RELEASE, method(_confirm, function() {
 	}
 	
 	var last_tile = get_rightmost_instance_pos(obj_tile_parent)
-	CreateWordWall(word, last_tile.x + 200, last_tile.y - 96)
+	if (last_tile != undefined) {
+		CreateWordWall(word, last_tile.x + 200, last_tile.y - 96)
+	} else {
+		// Fallback position if no tiles exist
+		CreateWordWall(word, 250, room_height - 300)
+	}
     draw_new_tiles()
 }));
 
