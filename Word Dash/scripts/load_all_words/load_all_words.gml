@@ -16,4 +16,5 @@ function load_all_words(){
 			struct_set(global.wordlist, word, {"word": word})
 		}
 	}
+	build_word_index_3to5()
 }
