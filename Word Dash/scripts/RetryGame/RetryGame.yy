@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"RetryGame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"RetryGame",
+  "parent":{
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

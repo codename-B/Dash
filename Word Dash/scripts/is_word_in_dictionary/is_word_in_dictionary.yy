@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"is_word_in_dictionary",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"is_word_in_dictionary",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

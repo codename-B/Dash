@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"crazygames_definitions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"crazygames_definitions",
+  "parent":{
+    "name":"CrazyGames",
+    "path":"folders/CrazyGames.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

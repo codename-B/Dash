@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"load_word_list_txt_optimized",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load_word_list_txt_optimized",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

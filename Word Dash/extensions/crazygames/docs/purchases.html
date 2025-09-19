@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>In-game Purchases - GMEXT-CrazyGames</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link href="assets/css/gmext_style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "In-game Purchases";
+        var mkdocs_page_input_path = "purchases.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/gml.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> GMEXT-CrazyGames
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="home.html">CrazyGames Extension</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="general.html">General</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="ad.html">Ad</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="banner.html">Banner</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="game.html">Game</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="user.html">User</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">In-game Purchases</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#constants">Constants</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">GMEXT-CrazyGames</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">In-game Purchases</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/YoYoGames/GMEXT-CrazyGames/edit/master/docs/purchases.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a id="top"></a></p>
+<h1 id="in-game-purchases"><strong>In-game Purchases</strong></h1>
+<p>Crazy Games have partnered with Xsolla to offer you the possibility to integrate in-game purchases more conveniently.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to call <a href="general.html#crazy_init">crazy_init</a> before stating to use the extension.</p>
+</div>
+<h2 id="functions">Functions</h2>
+<p>The following functions can be used to control IAPs inside your game:</p>
+<ul>
+<li><a href="user.html#crazy_user_get_xsolla_user_token">crazy_user_get_xsolla_user_token</a></li>
+<li><a href="purchases.html#crazy_analytics_track_order">crazy_analytics_track_order</a></li>
+<li><a href="purchases.html#crazy_xsolla_open_paystation">crazy_xsolla_open_paystation</a></li>
+<li><a href="purchases.html#crazy_xsolla_close_paystation">crazy_xsolla_close_paystation</a></li>
+</ul>
+<h2 id="constants">Constants</h2>
+<p>The following constants are available when using IAPs inside your game:</p>
+<ul>
+<li><a href="purchases.html#crazy_xsolla_event">CRAZY_XSOLLA_EVENT</a></li>
+</ul>
+<p><br></p>
+<hr />
+<p align="right"><a href="#top">Back To Top</a></p>
+
+<h1 id="crazy_analytics_track_order">crazy_analytics_track_order</h1>
+<p>This function tracks an in-game purchase order with CrazyGames analytics, using Xsolla as the payment provider.</p>
+<p>When using Xsolla, you will mostly deal with 3 order statuses:</p>
+<ul>
+<li>new</li>
+<li>done</li>
+<li>canceled</li>
+</ul>
+<p>Every time an order has been successfully completed (done), call our analytics module.</p>
+<p><br></p>
+<p><strong>Syntax:</strong></p>
+<blockquote>
+<pre class="highlight"><code class="language-gml">crazy_analytics_track_order(order)</code></pre>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order</td>
+<td><a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Strings/Strings.htm">String</a></td>
+<td>JSON-formatted string containing the order details (e.g., product ID, price, currency).</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><strong>Returns:</strong></p>
+<blockquote>
+<p>N/A</p>
+</blockquote>
+<p><br></p>
+<p><strong>Example:</strong></p>
+<pre class="highlight"><code class="language-gml">// comes from the xsolla purchase
+var orderData = {};
+crazy_analytics_track_order(json_stringify(orderData));
+show_debug_message("Purchase order tracked in CrazyGames analytics.");</code></pre>
+<p><br></p>
+<p><br></p>
+<hr />
+<p align="right"><a href="#top">Back To Top</a></p>
+
+<h1 id="crazy_xsolla_open_paystation">crazy_xsolla_open_paystation</h1>
+<p>This function opens Xsolla Pay Station (embedded) and forwards ALL widget events to a single GML callback
+as a <code>{ type, payload }</code> object. Call this function from a direct user gesture (e.g., a button click).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to code all interaction with Xsolla yourself using calls to <a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_request.htm">http_request</a>
+that communicate with their <a href="https://developers.xsolla.com/api/getting-started">REST API</a>.</p>
+</div>
+<p><br></p>
+<p><strong>Syntax:</strong></p>
+<blockquote>
+<pre class="highlight"><code class="language-gml">crazy_xsolla_open_paystation(token, callback, options)</code></pre>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Strings/Strings.htm">String</a></td>
+<td>Xsolla purchase token (payment token for a specific SKU/order).</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></td>
+<td>Single GML callback function receiving <code>{type, payload}</code>.</td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Strings/Strings.htm">String</a></td>
+<td>A JSON-formatted string containing the options to pass to the Xsolla widget ("{ sandbox: false, queryParams: {...} }")</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><strong>Returns:</strong></p>
+<blockquote>
+<p>N/A</p>
+</blockquote>
+<p><br></p>
+<p><strong>Example:</strong></p>
+<pre class="highlight"><code class="language-gml">// 1) Get user token (e.g., crazy_user_get_xsolla_user_token) then:
+// 2) Use http_request() calls to:
+//   * List owned items: GET https://store.xsolla.com/api/v2/project/{project_id}/user/inventory/items
+//       - Requires Bearer user token (in the header DS map set _header[? "Authentication"] = "Bearer &lt;token&gt;").
+//       - Shows items the current user owns.
+//       - Supports filtering (by SKU, group, type) and pagination (see Xsolla docs).
+//   * List available items: GET https://store.xsolla.com/api/v2/project/{project_id}/items/virtual_items
+//       - Returns a paged list of all virtual items in your store.
+//       - Pass Bearer user token if you want personalized results (promotions, restricted items).
+//       - Supports optional query params (see Xsolla docs).
+//   * Request a payment token: POST https://store.xsolla.com/api/v2/project/{project_id}/payment/item/{item_sku}
+//       - Requires Bearer user token.
+//       - Use body to pass extra params: { "quantity": 5, "sandbox": true }.
+//       - The HTTP Async Event will return the payment token.
+// 3) After you have a payment token open the paystation using the helper method:
+var cb = function(evt) {
+    switch (evt.type) {
+        case CRAZY_XSOLLA_EVENT_INIT:   show_debug_message("IAP init"); break;
+        case CRAZY_XSOLLA_EVENT_OPEN:   show_debug_message("IAP open"); break;
+        case CRAZY_XSOLLA_EVENT_LOAD:   show_debug_message("IAP load"); break;
+        case CRAZY_XSOLLA_EVENT_STATUS: show_debug_message("IAP status: " + json_stringify(evt.payload)); break;
+        case CRAZY_XSOLLA_EVENT_STATUS_INVOICE: show_debug_message("IAP invoice: " + json_stringify(evt.payload)); break;
+        case CRAZY_XSOLLA_EVENT_STATUS_DELIVERING: show_debug_message("IAP delivering: " + json_stringify(evt.payload)); break;
+        case CRAZY_XSOLLA_EVENT_STATUS_DONE:
+            show_debug_message("IAP done: " + json_stringify(evt.payload));
+            // Optionally track the order with CrazyGames analytics:
+            // var orderData = { order_id: evt.payload?.order_id, status: "done" };
+            // crazy_analytics_track_order(json_stringify(orderData));
+            break;
+        case CRAZY_XSOLLA_EVENT_CLOSE:  show_debug_message("IAP close"); break;
+        case CRAZY_XSOLLA_EVENT_ERROR:  show_debug_message("IAP error: " + json_stringify(evt.payload)); break;
+    }
+};
+
+var options = { sandbox: true };
+crazy_xsolla_open_paystation(global.xsolla_token, cb, json_stringify(options));</code></pre>
+<p><br></p>
+<p><br></p>
+<hr />
+<p align="right"><a href="#top">Back To Top</a></p>
+
+<h1 id="crazy_xsolla_close_paystation">crazy_xsolla_close_paystation</h1>
+<p>This is a helper function to programmatically close the Pay Station lightbox.</p>
+<p><br></p>
+<p><strong>Syntax:</strong></p>
+<blockquote>
+<pre class="highlight"><code class="language-gml">crazy_xsolla_close_paystation()</code></pre>
+</blockquote>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><strong>Returns:</strong></p>
+<blockquote>
+<p>N/A</p>
+</blockquote>
+<p><br></p>
+<p><strong>Example:</strong></p>
+<pre class="highlight"><code class="language-gml">crazy_xsolla_close_paystation();</code></pre>
+<p><br></p>
+<p><br></p>
+<hr />
+<p align="right"><a href="#top">Back To Top</a></p>
+
+<h1 id="crazy_user_get_xsolla_user_token">crazy_user_get_xsolla_user_token</h1>
+<p>This function retrieves the Xsolla user token from CrazyGames for in-game purchases.
+This token is used to authenticate the user with Xsolla's payment services.</p>
+<p><br></p>
+<p><strong>Syntax:</strong></p>
+<blockquote>
+<pre class="highlight"><code class="language-gml">crazy_user_get_xsolla_user_token(callback_success, callback_failed)</code></pre>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback_success</td>
+<td><a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></td>
+<td>Called with the token string on success.</td>
+</tr>
+<tr>
+<td>callback_failed</td>
+<td><a href="https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></td>
+<td>Called with an error object on failure.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><strong>Returns:</strong></p>
+<blockquote>
+<p>N/A</p>
+</blockquote>
+<p><br></p>
+<p><strong>Example:</strong></p>
+<pre class="highlight"><code class="language-gml">crazy_user_get_xsolla_user_token(
+    function(token) {
+        show_debug_message("Xsolla Token: " + token);
+    },
+    function(err) {
+        show_debug_message("Failed to get Xsolla token: " + json_stringify(err));
+    }
+);</code></pre>
+<p><br></p>
+<p><br></p>
+<hr />
+<p align="right"><a href="#top">Back To Top</a></p>
+
+<h1 id="crazy_xsolla_event">CRAZY_XSOLLA_EVENT</h1>
+<p>This set of macros represents the possible IAP event types.</p>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_INIT</code></td>
+<td>Event on widget initialization</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_OPEN</code></td>
+<td>Event on opening of the widget</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_LOAD</code></td>
+<td>Event after payment interface (Pay Station) was loaded</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_CLOSE</code></td>
+<td>Event after payment interface (Pay Station) was closed</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_STATUS</code></td>
+<td>Event when the user was moved on the status page</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_STATUS_INVOICE</code></td>
+<td>Event when the user was moved on the status page, but the payment is not yet completed</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_STATUS_DELIVERING</code></td>
+<td>Event when the user was moved on the status page, payment was completed, and Xsolla is sending payment notification</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_STATUS_DONE</code></td>
+<td>Event when the user was moved on the status page, and the payment was completed successfully</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_STATUS_TROUBLED</code></td>
+<td>Event when the user was moved on the status page, but the payment failed</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_USER_COUNTRY</code></td>
+<td>Event when Pay Station has determined the user's country</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_FCP</code></td>
+<td>Event when fcp occurs in Pay Station</td>
+</tr>
+<tr>
+<td><code>CRAZY_XSOLLA_EVENT_ERROR</code></td>
+<td>Event when a payment flow error occurs</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="data.html" class="btn btn-neutral float-left" title="Data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><p align="center">GameMaker 2025</p></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/YoYoGames/GMEXT-CrazyGames" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="data.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/gml.min.js"></script>
+      <script src="assets/js/gmext_script.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
