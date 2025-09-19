@@ -19,7 +19,7 @@ if (keyboard_check_pressed(vk_backspace)) {
     show_debug_message("Backspace detected via keyboard_check_pressed");
     global.backspace_initial_time = current_time;
     global.backspace_last_time = current_time;
-    ui_remove_letter();
+    ui_activate_reset();
     return;
 }
 

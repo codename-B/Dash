@@ -7,7 +7,7 @@ if (keyboard_check(vk_backspace)) {
         
         // Only delete if we're not in the initial press phase (handled by KeyPress event)
         if (current_time - global.backspace_initial_time > 500) { // 500ms initial delay before continuous deletion starts
-            ui_remove_letter();
+            ui_activate_reset()
         }
     }
 } else {
