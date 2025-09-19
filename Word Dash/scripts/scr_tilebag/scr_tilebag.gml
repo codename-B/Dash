@@ -36,21 +36,3 @@ function tilebag_build_from_master_and_shuffle() {
 function tilebag_shuffle() {
 	global.expedition_tile_bag = array_shuffle(global.expedition_tile_bag)
 }
-
-/// draw_tiles(count)
-/// Returns an array of tiles and removes them from the expedition bag
-function draw_tiles(count) {
-	var tiles = [];
-	
-	for(var i=0; i<count; i++) {
-		if (array_length(global.expedition_tile_bag) == 0) {
-			tilebag_build_from_master_and_shuffle() // infinite looping!	
-		}
-		var tile = array_pop(global.expedition_tile_bag);
-		if (tile != undefined) {
-			array_push(tiles, tile);	
-		}
-	}
-
-    return tiles;
-}

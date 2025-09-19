@@ -46,6 +46,10 @@ function ui_activate_confirm() {
         global.game_running = true;
         global.first_word_placed = true;
     }
+	if (!global.sound) {
+		global.sound = true
+		audio_play_sound(ink_on_paper_lofi_296412_ogg_q4, 1.0, true)
+	}
     if (global.failed) {
         return;
     }

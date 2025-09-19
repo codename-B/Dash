@@ -131,6 +131,7 @@
     {"id":{"name":"draw_new_tiles","path":"scripts/draw_new_tiles/draw_new_tiles.yy",},},
     {"id":{"name":"draw_text_scribble_ext","path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},},
     {"id":{"name":"draw_text_scribble","path":"scripts/draw_text_scribble/draw_text_scribble.yy",},},
+    {"id":{"name":"draw_tiles","path":"scripts/draw_tiles/draw_tiles.yy",},},
     {"id":{"name":"FastNoiseLite","path":"scripts/FastNoiseLite/FastNoiseLite.yy",},},
     {"id":{"name":"get_current_word","path":"scripts/get_current_word/get_current_word.yy",},},
     {"id":{"name":"get_rank_title","path":"scripts/get_rank_title/get_rank_title.yy",},},

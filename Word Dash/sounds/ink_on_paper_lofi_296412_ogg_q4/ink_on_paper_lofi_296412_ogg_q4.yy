@@ -7,7 +7,7 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":0,
+  "compression":3,
   "conversionMode":0,
   "duration":240.02402,
   "name":"ink_on_paper_lofi_296412_ogg_q4",

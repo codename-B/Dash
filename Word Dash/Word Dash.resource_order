@@ -97,6 +97,7 @@
     {"name":"CreateWordWall","order":5,"path":"scripts/CreateWordWall/CreateWordWall.yy",},
     {"name":"draw_new_tiles","order":8,"path":"scripts/draw_new_tiles/draw_new_tiles.yy",},
     {"name":"draw_text_scribble_ext","order":1,"path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},
+    {"name":"draw_tiles","order":13,"path":"scripts/draw_tiles/draw_tiles.yy",},
     {"name":"FastNoiseLite","order":1,"path":"scripts/FastNoiseLite/FastNoiseLite.yy",},
     {"name":"get_current_word","order":6,"path":"scripts/get_current_word/get_current_word.yy",},
     {"name":"get_rank_title","order":12,"path":"scripts/get_rank_title/get_rank_title.yy",},
