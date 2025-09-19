@@ -1,4 +1,4 @@
-function draw_new_tiles() {
+function draw_new_tiles(recycle_all = false) {
     // Put current word tiles back in hand before clearing
     if (variable_global_exists("current_word_tiles")) {
         for (var i = 0; i < array_length(global.current_word_tiles); i++) {
@@ -26,41 +26,66 @@ function draw_new_tiles() {
         global.current_word_tiles = [];
     }
     
-	// Count how many tiles are currently played (hidden bottom tiles)
-    var played_count = 0;
-    
-    for (var i = 0; i < array_length(global.tiles); i++) {
-        var bottom_tile = global.tiles[i];
-        if (!bottom_tile.getVisible()) {
-            played_count++;
-        }
-    }
-    
-    // Only proceed if there are tiles to reset
-    if (played_count > 0) {
-        // Draw new tiles from the pool (only the number that were played)
-        var new_tiles = draw_tiles(played_count);
+    if (recycle_all) {
+        // Recycle all tiles - shuffle bag and draw completely fresh hand
+        tilebag_build_from_master_and_shuffle();
+        global.hand_tiles = draw_tiles(10);
         
-        // Find the corresponding bottom tiles that were hidden and update them with new tiles
+        // Update all UI tiles with the new hand
+        for (var i = 0; i < array_length(global.tiles); i++) {
+            var bottom_tile = global.tiles[i];
+            var hand_tile_data = global.hand_tiles[i];
+            
+            // Safety check to ensure hand_tile_data is valid
+            if (hand_tile_data != undefined && hand_tile_data.letter != undefined && hand_tile_data.value != undefined) {
+                // Update the tile's display with new letter and value
+                bottom_tile._text.setText("[c_black]" + hand_tile_data.letter);
+                bottom_tile._score.setText("[c_black][Kreon]" + string(hand_tile_data.value));
+                bottom_tile._value = hand_tile_data.value;
+                bottom_tile._letter = hand_tile_data.letter;
+                
+                // Re-enable and reveal the tile
+                bottom_tile.setVisible(true);
+                bottom_tile.setEnabled(true);
+            }
+        }
+    } else {
+        // Count how many tiles are currently played (hidden bottom tiles)
+        var played_count = 0;
+        
         for (var i = 0; i < array_length(global.tiles); i++) {
             var bottom_tile = global.tiles[i];
             if (!bottom_tile.getVisible()) {
-                // This bottom tile was hidden (played), so update it with a new tile
-                var new_hand_tile = array_pop(new_tiles);
-                // Safety check to ensure new_hand_tile is valid
-                if (new_hand_tile != undefined && new_hand_tile.letter != undefined && new_hand_tile.value != undefined) {
-                    // Update the tile's display with new letter and value
-                    bottom_tile._text.setText("[c_black]" + new_hand_tile.letter);
-                    bottom_tile._score.setText("[c_black][Kreon]" + string(new_hand_tile.value));
-                    bottom_tile._value = new_hand_tile.value;
-                    bottom_tile._letter = new_hand_tile.letter
-                    
-                    // Update the hand_tiles array
-                    global.hand_tiles[i] = new_hand_tile;
-                    
-                    // Re-enable and reveal the tile
-                    bottom_tile.setVisible(true);
-                    bottom_tile.setEnabled(true);
+                played_count++;
+            }
+        }
+        
+        // Only proceed if there are tiles to reset
+        if (played_count > 0) {
+            // Draw new tiles from the pool (only the number that were played)
+            var new_tiles = draw_tiles(played_count);
+            
+            // Find the corresponding bottom tiles that were hidden and update them with new tiles
+            for (var i = 0; i < array_length(global.tiles); i++) {
+                var bottom_tile = global.tiles[i];
+                if (!bottom_tile.getVisible()) {
+                    // This bottom tile was hidden (played), so update it with a new tile
+                    var new_hand_tile = array_pop(new_tiles);
+                    // Safety check to ensure new_hand_tile is valid
+                    if (new_hand_tile != undefined && new_hand_tile.letter != undefined && new_hand_tile.value != undefined) {
+                        // Update the tile's display with new letter and value
+                        bottom_tile._text.setText("[c_black]" + new_hand_tile.letter);
+                        bottom_tile._score.setText("[c_black][Kreon]" + string(new_hand_tile.value));
+                        bottom_tile._value = new_hand_tile.value;
+                        bottom_tile._letter = new_hand_tile.letter
+                        
+                        // Update the hand_tiles array
+                        global.hand_tiles[i] = new_hand_tile;
+                        
+                        // Re-enable and reveal the tile
+                        bottom_tile.setVisible(true);
+                        bottom_tile.setEnabled(true);
+                    }
                 }
             }
         }
