@@ -87,7 +87,7 @@
 				var _width = self.__dimensions.width == 0 ? _t.get_width() + _pad_left+_pad_right : self.__dimensions.width;
 				var _height = _t.get_height() + _pad_top+_pad_bottom;
 					
-				if (point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x, _y, _x + _width, _y + _height)) {
+				if (point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x, _y, _x + _width, _y + _height)) {
 					_sprite =	self.__sprite_mouseover;
 					_image =	self.__image_mouseover;
 					_fmt =		self.__text_format_mouseover;
@@ -116,7 +116,7 @@
 					for (var _i=0; _i<_n; _i++) {	
 						var _fmt = self.__text_format_unselected;
 						_t = UI_TEXT_RENDERER(_scale+_fmt+self.__option_array_unselected[_i]);
-						if (point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x, _y + _cum_h, _x + _width, _y + _t.get_height() + _cum_h + self.__spacing)) {
+						if (point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x, _y + _cum_h, _x + _width, _y + _t.get_height() + _cum_h + self.__spacing)) {
 							_fmt =	self.__text_format_mouseover;
 							_t = UI_TEXT_RENDERER(_scale+_fmt+self.__option_array_mouseover[_i]);
 						}
@@ -150,7 +150,7 @@
 						var _cum_h = 0;
 						while (_i<_n && _clicked == -1) {
 							_t = UI_TEXT_RENDERER(_scale+self.__option_array_mouseover[_i]);
-							if (point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x, _y + _cum_h, _x + _width, _y + _t.get_height() + _cum_h + self.__spacing)) {
+							if (point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x, _y + _cum_h, _x + _width, _y + _t.get_height() + _cum_h + self.__spacing)) {
 								_clicked = _i;
 							}
 							else {

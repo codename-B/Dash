@@ -1,6 +1,6 @@
 var _scale = UI.getScale(); // Get the UI's global scale
-var _scaled_x = device_mouse_x_to_gui(0) / _scale;
-var _scaled_y = device_mouse_y_to_gui(0) / _scale;
+var _scaled_x = mouse_gui_x() / _scale;
+var _scaled_y = mouse_gui_y() / _scale;
 var _all_widgets = ui_get_widgets();
 for (var i = array_length(_all_widgets) - 1; i >= 0; i--) {
     var _widget = _all_widgets[i];

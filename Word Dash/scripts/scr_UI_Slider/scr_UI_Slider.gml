@@ -388,8 +388,8 @@
 				}
 				var _handle = self.__getHandle();
 					
-				var _m_x = device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice());
-				var _m_y = device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice());
+				var _m_x = mouse_gui_x();
+				var _m_y = mouse_gui_y();
 				var _w_handle = sprite_exists(self.__sprite_handle) ? sprite_get_width(self.__sprite_handle) : 0;
 				var _h_handle = sprite_exists(self.__sprite_handle) ? sprite_get_height(self.__sprite_handle) : 0;
 				var _within_handle = point_in_rectangle(_m_x, _m_y, _handle.x, _handle.y, _handle.x + _w_handle * global.__gooey_manager_active.getScale(), _handle.y + _h_handle);
@@ -439,8 +439,8 @@
 			self.__builtInBehavior = function() {
 					
 				// Check if click is outside handle
-				var _m_x = device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice());
-				var _m_y = device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice());
+				var _m_x = mouse_gui_x();
+				var _m_y = mouse_gui_y();
 				var _handle = self.__getHandle();
 				var _w_handle = sprite_exists(self.__sprite_handle) ? sprite_get_width(self.__sprite_handle) : 0;
 				var _h_handle = sprite_exists(self.__sprite_handle) ? sprite_get_height(self.__sprite_handle) : 0;
@@ -475,8 +475,8 @@
 			}
 				
 			self.__dragCondition = function() {
-				var _m_x = device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice());
-				var _m_y = device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice());
+				var _m_x = mouse_gui_x();
+				var _m_y = mouse_gui_y();
 				var _handle = self.__getHandle();
 				var _w_handle = sprite_exists(self.__sprite_handle) ? sprite_get_width(self.__sprite_handle) : 0;
 				var _h_handle = sprite_exists(self.__sprite_handle) ? sprite_get_height(self.__sprite_handle) : 0;
@@ -500,7 +500,7 @@
 					var _width = self.__length * global.__gooey_manager_active.getScale();
 					var _current_value_proportion = (self.__value - self.__min_value)/(self.__max_value - self.__min_value);
 					//var _current_handle_x_center = self.__getHandle().x + _w_handle/2;
-					var _m_x = device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice());
+					var _m_x = mouse_gui_x();
 					var _new_handle_x_center = _m_x  - _w_handle/2;
 					var _new_value_proportion = clamp((_new_handle_x_center - self.__dimensions.x - self.__handle_offset.x) / _width, 0, 1);			
 				}
@@ -508,7 +508,7 @@
 					var _height = self.__length * global.__gooey_manager_active.getScale();
 					var _current_value_proportion = (self.__value - self.__min_value)/(self.__max_value - self.__min_value);
 					//var _current_handle_y_center = self.__getHandle().y + _h_handle/2;
-					var _m_y = device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice());
+					var _m_y = mouse_gui_y();
 					var _new_handle_y_center = _m_y  - _h_handle/2;
 					var _new_value_proportion = clamp((_new_handle_y_center - self.__dimensions.y - self.__handle_offset.y) / _height , 0, 1);	
 				}

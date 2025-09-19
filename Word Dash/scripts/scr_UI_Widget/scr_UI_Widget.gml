@@ -947,10 +947,10 @@
 									_y1 = min(_y1, _dim_parent.y + _dim_parent.height);
 									_current_parent = _current_parent.getParent();
 								}
-								if (_x0 < _x1 && _y0 < _y1)		self.__events_fired[UI_EVENT.MOUSE_OVER] = point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x0, _y0, _x1, _y1);
+								if (_x0 < _x1 && _y0 < _y1)		self.__events_fired[UI_EVENT.MOUSE_OVER] = point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x0, _y0, _x1, _y1);
 							}
 							else {
-								self.__events_fired[UI_EVENT.MOUSE_OVER] = point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), self.__dimensions.x, self.__dimensions.y, self.__dimensions.x + self.__dimensions.width * global.__gooey_manager_active.getScale(), self.__dimensions.y + self.__dimensions.height * global.__gooey_manager_active.getScale());
+								self.__events_fired[UI_EVENT.MOUSE_OVER] = point_in_rectangle(mouse_gui_x(), mouse_gui_y(), self.__dimensions.x, self.__dimensions.y, self.__dimensions.x + self.__dimensions.width * global.__gooey_manager_active.getScale(), self.__dimensions.y + self.__dimensions.height * global.__gooey_manager_active.getScale());
 							}
 						}
 					}
@@ -997,15 +997,15 @@
 							// Determine mouse cursors for mouseover
 							if (self.__events_fired[UI_EVENT.MOUSE_OVER]) {
 								var _y1drag = self.__drag_bar_height == self.__dimensions.height ? _y2 : _y1 + self.__drag_bar_height;								
-								if		(self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x0, _y0, _x1, _y1))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NWSE);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x2, _y0, _x3, _y1))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NESW);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x0, _y2, _x1, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NESW);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x2, _y2, _x3, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NWSE);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x0, _y0, _x3, _y1))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NS);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x2, _y0, _x3, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_WE);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x0, _y2, _x3, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NS);
-								else if (self.__resizable && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x0, _y0, _x1, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_WE);
-								else if (((self.__type == UI_TYPE.PANEL && self.__movable) || (self.__type != UI_TYPE.PANEL && self.__draggable)) && point_in_rectangle(device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()), device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()), _x1, _y1, _x2, _y1drag))	global.__gooey_manager_active.__setUICursor(UI_CURSOR_DRAG);
+								if		(self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x0, _y0, _x1, _y1))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NWSE);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x2, _y0, _x3, _y1))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NESW);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x0, _y2, _x1, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NESW);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x2, _y2, _x3, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NWSE);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x0, _y0, _x3, _y1))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NS);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x2, _y0, _x3, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_WE);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x0, _y2, _x3, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_NS);
+								else if (self.__resizable && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x0, _y0, _x1, _y3))		global.__gooey_manager_active.__setUICursor(UI_CURSOR_SIZE_WE);
+								else if (((self.__type == UI_TYPE.PANEL && self.__movable) || (self.__type != UI_TYPE.PANEL && self.__draggable)) && point_in_rectangle(mouse_gui_x(), mouse_gui_y(), _x1, _y1, _x2, _y1drag))	global.__gooey_manager_active.__setUICursor(UI_CURSOR_DRAG);
 							}
 					
 							if (self.__isDragStart())	{
@@ -1035,8 +1035,8 @@
 						global.__gooey_manager_active.__drag_data.__drag_start_y = self.__dimensions.y;
 						global.__gooey_manager_active.__drag_data.__drag_start_width = self.__dimensions.width;
 						global.__gooey_manager_active.__drag_data.__drag_start_height = self.__dimensions.height;
-						global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x = device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice());
-						global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y = device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice());						
+						global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x = mouse_gui_x();
+						global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y = mouse_gui_y();						
 					}
 					
 					self.__isDragStart = function() {

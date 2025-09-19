@@ -831,50 +831,50 @@
 			
 			self.__drag = function() {										
 				if (self.__movable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.DRAG) {
-					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
-					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
+					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
+					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_SE) {
-					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x);
-					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y);
+					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x);
+					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y);
 					self.__updateChildrenPositions();					
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_NE) {
-					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x);
-					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
-					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y - device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()));
+					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x);
+					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
+					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y - mouse_gui_y());
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_SW) {
-					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
-					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x - device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()));
-					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y);
+					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
+					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x - mouse_gui_x());
+					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y);
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_NW) {
-					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
-					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
-					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x - device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()));
-					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y - device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()));
+					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
+					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
+					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x - mouse_gui_x());
+					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y - mouse_gui_y());
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_N) {
-					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
-					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y - device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()));
+					self.__dimensions.y = global.__gooey_manager_active.__drag_data.__drag_start_y + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y;
+					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y - mouse_gui_y());
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_S) {
-					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + device_mouse_y_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y);
+					self.__dimensions.height = max(self.__min_height, global.__gooey_manager_active.__drag_data.__drag_start_height + mouse_gui_y() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_y);
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_W) {
-					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
-					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x - device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()));
+					self.__dimensions.x = global.__gooey_manager_active.__drag_data.__drag_start_x + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x;
+					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x - mouse_gui_x());
 					self.__updateChildrenPositions();
 				}
 				else if (self.__resizable && global.__gooey_manager_active.__drag_data.__drag_action == UI_RESIZE_DRAG.RESIZE_E) {
-					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + device_mouse_x_to_gui(global.__gooey_manager_active.getMouseDevice()) - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x);
+					self.__dimensions.width = max(self.__min_width, global.__gooey_manager_active.__drag_data.__drag_start_width + mouse_gui_x() - global.__gooey_manager_active.__drag_data.__drag_mouse_delta_x);
 					self.__updateChildrenPositions();
 				}
 			}
