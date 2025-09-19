@@ -21,7 +21,7 @@ var side_pad  = 15;
 _background = new UIPanel("game_over_background", 0, 0, gui_w, gui_h, panel_half);
 _background.setResizable(false);
 _background.setMovable(false);
-
+_background.setDraggable(false);
 // ===== Main Panel =====
 _panel = new UIPanel("game_over", tile_w, tile_h, panel_w, panel_h, panel);
 _panel.setResizable(false);
