@@ -53,6 +53,7 @@
     {"name":"obj_fake_wall","order":4,"path":"objects/obj_fake_wall/obj_fake_wall.yy",},
     {"name":"obj_game_controller","order":1,"path":"objects/obj_game_controller/obj_game_controller.yy",},
     {"name":"obj_game_over","order":8,"path":"objects/obj_game_over/obj_game_over.yy",},
+    {"name":"obj_input","order":10,"path":"objects/obj_input/obj_input.yy",},
     {"name":"obj_keyboard","order":6,"path":"objects/obj_keyboard/obj_keyboard.yy",},
     {"name":"obj_parallax_background","order":9,"path":"objects/obj_parallax_background/obj_parallax_background.yy",},
     {"name":"obj_score","order":5,"path":"objects/obj_score/obj_score.yy",},

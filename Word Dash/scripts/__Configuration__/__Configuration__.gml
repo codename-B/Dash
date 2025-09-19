@@ -14,7 +14,7 @@
 	
 // Change this to Gamemaker values or sprite references if you want to use graphical cursors
 #macro		UI_CURSOR_DEFAULT						cr_default
-#macro		UI_CURSOR_INTERACT						cr_handpoint
+#macro		UI_CURSOR_INTERACT						cr_default
 #macro		UI_CURSOR_SIZE_NWSE						cr_size_nwse
 #macro		UI_CURSOR_SIZE_NESW						cr_size_nesw
 #macro		UI_CURSOR_SIZE_NS						cr_size_ns
@@ -41,7 +41,7 @@
 #macro		UI_DRILL_THROUGH_MOUSE_WHEEL_DOWN		true
 
 // Set this to determine where is gooey rendered. If false, it will render on Draw GUI Begin, if true it will render on Draw GUI End
-#macro		UI_DISPLAY_AFTER_GUI_END				false
+#macro		UI_DISPLAY_AFTER_GUI_END				true
 
 // Change this variable to specify a different default for the anchor point (relative_to) definition when creating widgets
 #macro		UI_DEFAULT_ANCHOR_POINT					UI_RELATIVE_TO.TOP_LEFT

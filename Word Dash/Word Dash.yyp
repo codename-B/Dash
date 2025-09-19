@@ -80,6 +80,7 @@
     {"id":{"name":"obj_fake_wall","path":"objects/obj_fake_wall/obj_fake_wall.yy",},},
     {"id":{"name":"obj_game_controller","path":"objects/obj_game_controller/obj_game_controller.yy",},},
     {"id":{"name":"obj_game_over","path":"objects/obj_game_over/obj_game_over.yy",},},
+    {"id":{"name":"obj_input","path":"objects/obj_input/obj_input.yy",},},
     {"id":{"name":"obj_keyboard","path":"objects/obj_keyboard/obj_keyboard.yy",},},
     {"id":{"name":"obj_parallax_background","path":"objects/obj_parallax_background/obj_parallax_background.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
