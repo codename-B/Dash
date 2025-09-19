@@ -36,6 +36,8 @@ function ui_play_letter(ch) {
             return false; // no top slot available
         }
     }
+    // Play negative sound when no matching tile is found
+    audio_play_sound(negative_sound2, 1.0, false);
     return false; // no matching tile found
 }
 
