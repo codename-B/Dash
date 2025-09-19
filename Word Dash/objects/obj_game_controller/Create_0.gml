@@ -31,7 +31,7 @@ tilebag_build_from_master_and_shuffle();
 // first draw 7
 var tiles   = 10;
 // --- Force the first 10 tiles to "PLACETILES"
-var preset = "PLACETILES";
+var preset = "PLACEWORDS";
 hand_tiles = array_create(tiles);
 
 for (var i = 0; i < tiles; i++) {

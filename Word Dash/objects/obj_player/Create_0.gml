@@ -12,7 +12,7 @@ state = PLAYERSTATE.IDLE;
 start_x = 96
 start_y = 352
 // Movement & Physics
-walk_speed = 3;
+walk_speed = 2.5;
 jump_force = 14;
 gravity_force = 0.5;
 vsp = 0;
