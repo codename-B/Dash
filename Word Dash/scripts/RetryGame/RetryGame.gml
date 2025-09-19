@@ -47,8 +47,6 @@ function RetryGame() {
     // Re-spawn the "AGAIN" wall (create real walls for initial word)
     CreateWordWall("AGAIN", 250, room_height - 300, true);
 	global.words_played = []
-	// Add the initial word to the words played list
-	array_push(global.words_played, "AGAIN");
 	
 	obj_game_controller._replay.setVisible(false)
 	obj_game_controller._confirm.setVisible(true)

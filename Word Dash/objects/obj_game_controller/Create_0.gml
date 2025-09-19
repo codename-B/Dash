@@ -28,9 +28,6 @@ global.tile_data = {
 
 tilebag_build_master();
 tilebag_build_from_master_and_shuffle();
-
-// Initialize hand tiles array
-global.hand_tiles = draw_tiles(10);
 // first draw 7
 var tiles   = 10;
 // --- Force the first 10 tiles to "PLACETILES"
@@ -111,18 +108,14 @@ for (var i = 0; i < tiles; i++) {
 
 _confirm.setCallback(UI_EVENT.LEFT_RELEASE, method(_confirm, function() {
 	// Validate the current word and start a new line
-    var word_valid = validate_current_word();
-    // Only draw new tiles if the word was valid
-    if (word_valid) {
-        draw_new_tiles();
-    }
-    // If word is invalid, fake walls remain on the board for the player to modify
+    validate_current_word();
+    draw_new_tiles();
 }));
 
 // Add callback for reset button
 _reset.setCallback(UI_EVENT.LEFT_RELEASE, method(_reset, function() {
 	audio_play_sound(Ding, 1.0, false);
-    draw_new_tiles(true)
+    draw_new_tiles()
 }));
 
 // reset (bottom-right)
@@ -147,8 +140,6 @@ _replay.setCallback(UI_EVENT.LEFT_RELEASE, method(_reset, function() {
 // create initial word wall (valid word, so create real walls)
 CreateWordWall("HELLO", 250, room_height - 300, true);
 global.words_played = []
-// Add the initial word to the words played list
-array_push(global.words_played, "HELLO");
 
 if (crazy_started()) {
 	// TODO a banner here?	
@@ -157,6 +148,3 @@ if (crazy_started()) {
 if (crazy_started()) {
 	crazy_game_loading_stop();	
 }
-
-// Initialize floating buttons after everything else is set up
-// Floating buttons are now handled by the obj_floating_buttons object directly

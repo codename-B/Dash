@@ -54,9 +54,6 @@ function validate_current_word() {
             score_ui._score.setText("[c_black][Kreon_Score]" + string(score_ui._value));
         }
         
-        // Add the word to the words played list for scoreboard tracking
-        array_push(global.words_played, current_word);
-        
         // Convert all fake walls to real walls since the word is valid
         for (var i = 0; i < array_length(global.current_word_tiles); i++) {
             var tile = global.current_word_tiles[i];
@@ -77,9 +74,30 @@ function validate_current_word() {
         // Invalid word - play error sound
         audio_play_sound(negative_sound2, 1.0, false);
         
-        // Keep the fake walls visible - don't destroy them or return tiles to hand
-        // The player can modify the word by clicking on individual fake walls to remove them
-        // or add more tiles to complete the word
+        // Put the letters back in the hand instead of destroying them
+        for (var i = 0; i < array_length(global.current_word_tiles); i++) {
+            var tile = global.current_word_tiles[i];
+            if (instance_exists(tile)) {
+                // Find a hidden bottom tile to restore
+                for (var j = 0; j < array_length(global.tiles); j++) {
+                    var bottom_tile = global.tiles[j];
+                    if (!bottom_tile.getVisible() && !bottom_tile.getEnabled()) {
+                        // Restore this bottom tile with the removed tile's letter
+                        bottom_tile._text.setText("[c_black]" + tile.letter);
+                        bottom_tile._letter = tile.letter;
+                        bottom_tile._score.setText("[c_black][Kreon]" + string(tile.score));
+                        bottom_tile._value = tile.score;
+                        
+                        // Re-enable and reveal the tile
+                        bottom_tile.setVisible(true);
+                        bottom_tile.setEnabled(true);
+                        break;
+                    }
+                }
+                instance_destroy(tile);
+            }
+        }
+        global.current_word_tiles = [];
         
         // Only mark as failed if the game has already started (first word was validated)
         if (global.first_word_placed) {
