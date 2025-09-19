@@ -52,7 +52,7 @@ if (global.game_running) {
 			
 			_confirm.setVisible(false)
 			_reset.setVisible(false)
-			_replay.setVisible(true)
+			_replay.setVisible(false)
 			
 			// if crazy - then we hook in the score
 			if (crazy_started()) {

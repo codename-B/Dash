@@ -2,6 +2,7 @@
 /// @description Checks if a word is valid, handling '?' as a wildcard.
 /// @param {string} word_string The word to check.
 function is_word_in_dictionary(word_string) {
+	return true
     var word = string_lower(word_string);
     
     // Find the position of the first wildcard character '?'

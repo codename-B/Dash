@@ -121,7 +121,7 @@ _panel.add(_wordsHeader);
 
 // ===== Scrollable area =====
 var scroll_top = wordsHeader_y + 24;
-var scroll_h   = panel_h - scroll_top - 120;
+var scroll_h   = panel_h - scroll_top - 127
 var scroll_w   = panel_w - (side_pad * 2);
 
 _scrollArea = new UIGroup("word_list_area", side_pad, scroll_top, scroll_w, scroll_h, transparent);
@@ -140,7 +140,7 @@ _panel.add(_totalScoreText);
 var words = [];
 var count = array_length(global.words_played);
 
-for (var i = 0; i < count && i < 5; i++) {
+for (var i = 0; i < count; i++) {
     var w = string(global.words_played[i]);
     var s = get_word_score_by_word(w);
     array_push(words, { word: w, score: s });
