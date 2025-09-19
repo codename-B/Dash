@@ -12,6 +12,7 @@ function RetryGame() {
     global.first_word_placed = false;
 	global.failed = false;
 	global.words_played = []
+	global.current_word_tiles = []
     
 	var score_ui = global.score_ui
 	score_ui._value = 0
@@ -24,11 +25,6 @@ function RetryGame() {
     // 4. Reset the UI to reflect the new hand
     // This code is similar to your initial setup logic.
     for (var i = 0; i < array_length(global.tiles); i++) {
-        // Reset the top row (played tiles)
-        var top_tile = global.tiles_to_play[i];
-        top_tile.setVisible(false);
-        top_tile.setEnabled(false);
-
         // Reset the bottom row (hand tiles) with the new letters
         var bottom_tile = global.tiles[i];
         var hand_tile_data = global.hand_tiles[i];
@@ -48,8 +44,8 @@ function RetryGame() {
     // Re-spawn the player
     instance_create_layer(_start_x, _start_y - 100, "Instances", obj_player);
     
-    // Re-spawn the "BEGIN" wall
-    CreateWordWall("AGAIN", 250, room_height - 300);
+    // Re-spawn the "AGAIN" wall (create real walls for initial word)
+    CreateWordWall("AGAIN", 250, room_height - 300, true);
 	global.words_played = []
 	
 	obj_game_controller._replay.setVisible(false)

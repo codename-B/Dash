@@ -134,10 +134,7 @@
   "sdfSpread":8,
   "size":48.0,
   "styleName":"Light",
-  "textureGroupId":{
-    "name":"Fonts",
-    "path":"texturegroups/Fonts",
-  },
+  "textureGroupId":null,
   "TTFName":"",
   "usesSDF":false,
 }

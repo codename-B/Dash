@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"reposition_current_word_tiles",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"reposition_current_word_tiles",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"update_floating_button_positions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"update_floating_button_positions",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

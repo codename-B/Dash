@@ -23,6 +23,12 @@ if (keyboard_check_pressed(vk_backspace)) {
     return;
 }
 
+if (keyboard_check_pressed(vk_escape)) {
+    show_debug_message("Escape detected - clearing current word");
+    ui_clear_current_word();
+    return;
+}
+
 // Debug output to see what we're getting
 show_debug_message("Key: " + string(k) + ", Char: '" + string(ch) + "', vk_enter: " + string(vk_enter) + ", vk_backspace: " + string(vk_backspace));
 
