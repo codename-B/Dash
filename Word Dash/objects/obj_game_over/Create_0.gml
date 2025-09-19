@@ -22,7 +22,12 @@ _background = new UIPanel("game_over_background", 0, 0, gui_w, gui_h, panel_half
 _background.setResizable(false);
 _background.setMovable(false);
 _background.setDraggable(false);
-_background.setEnabled(false);
+// Add click callback to background to reset game when clicking outside scoreboard
+_background.setCallback(UI_EVENT.LEFT_RELEASE, method(_background, function () {
+    audio_play_sound(Ding, 1.0, false);
+    RetryGame();
+    instance_destroy(obj_game_over);
+}));
 // ===== Main Panel =====
 _panel = new UIPanel("game_over", tile_w, tile_h, panel_w, panel_h, panel);
 _panel.setResizable(false);
@@ -41,6 +46,7 @@ _closeButton = new UIButton("game_over_close", panel_w - 90, 10, 80, 80, "[c_whi
 _closeButton.setSpriteClick(panel_solid);
 _closeButton.setCallback(UI_EVENT.LEFT_RELEASE, method(_closeButton, function () {
     audio_play_sound(Ding, 1.0, false);
+    RetryGame();
     instance_destroy(obj_game_over);
 }));
 _topbar.add(_closeButton);
