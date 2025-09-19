@@ -5,7 +5,10 @@ if (!instance_exists(obj_player)) exit;
 x -= obj_player.h_scroll;
 y -= obj_player.v_scroll;
 
+var width  = display_get_gui_width();
+var height = display_get_gui_height();
+
 // Destroy when off-screen
-if (x < -100 || 0 < -100) {
+if (x < -width || y < -height) {
     instance_destroy();
 }

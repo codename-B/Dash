@@ -47,7 +47,7 @@ _topbar.add(_closeButton);
 _panel.add(_topbar);
 
 // ===== BEST STATS SECTION =====
-var bestScore     = get_best_score();
+var bestScore     = get_best_score()
 var is_record     = (currScore > bestScore);
 var shownBest     = is_record ? currScore : bestScore;
 var shownBestRank = get_rank_title(shownBest);

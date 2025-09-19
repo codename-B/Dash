@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"get_best_word",
+  "%Name":"CrazyWrapper",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"get_best_word",
+  "name":"CrazyWrapper",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
