@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"ink_on_paper_lofi_296412_ogg_q4.ogg",
   "type":0,
-  "volume":1.0,
+  "volume":0.18,
 }
