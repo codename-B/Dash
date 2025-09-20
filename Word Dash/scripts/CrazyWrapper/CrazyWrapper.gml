@@ -1,35 +1,53 @@
 function get_best_word() {
     var best_word = "";
-    // Get best word from CrazyGames if available
+
+    // Try to get best word from CrazyGames (if available)
     try {
         if (crazy_started()) {
-            best_word = crazy_data_get_item("best_word");
+            var cg_word = crazy_data_get_item("best_word");
+            if (is_string(cg_word)) best_word = cg_word;
         }
     } catch (e) {
-        console.log("Error getting best word from CrazyGames: " + string(e));
-        best_word = ""; // Reset to default value
+        show_debug_message("Error getting best word from CrazyGames: " + string(e));
+        best_word = "";
     }
-    
-    // Check local words against best_word
-    if (is_array(global.words_played)) {
+
+    // Determine the single highest-scoring local word
+    var top_local = "";
+    if (is_array(global.words_played) && array_length(global.words_played) > 0) {
+        var pq = ds_priority_create();
         for (var i = 0; i < array_length(global.words_played); i++) {
-            var current_word = global.words_played[i];
-            // Replace with your own criteria for "better word"
-            if (get_word_score_by_word(current_word) > get_word_score_by_word(best_word)) {
-                best_word = current_word;
-                // Override CrazyGames value if connected
-                try {
-                    if (crazy_started()) {
-                        crazy_data_set_item("best_word", best_word);
-                    }
-                } catch (e) {
-                    console.log("Error setting best word to CrazyGames: " + string(e));
-                }
+            var w = global.words_played[i];
+            var s = get_word_score_by_word(w);
+            ds_priority_add(pq, w, s); // higher score => higher priority
+        }
+        if (ds_priority_size(pq) > 0) {
+            top_local = ds_priority_find_max(pq); // effectively "first after sorting desc by score"
+        }
+        ds_priority_destroy(pq);
+    }
+
+    // If we have a local candidate, compare (unless best_word is empty)
+    if (top_local != "") {
+        if (best_word == "") {
+            best_word = top_local;
+        } else if (get_word_score_by_word(top_local) > get_word_score_by_word(best_word)) {
+            best_word = top_local;
+        }
+
+        // Persist back to CrazyGames if connected
+        try {
+            if (crazy_started()) {
+                crazy_data_set_item("best_word", best_word);
             }
+        } catch (e2) {
+            show_debug_message("Error setting best word to CrazyGames: " + string(e2));
         }
     }
+
     return best_word;
 }
+
 
 function get_best_score() {
     var best = 0;
