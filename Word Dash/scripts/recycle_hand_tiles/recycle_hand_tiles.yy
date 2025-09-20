@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"recycle_hand_tiles",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"recycle_hand_tiles",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

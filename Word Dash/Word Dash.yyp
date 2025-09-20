@@ -143,6 +143,7 @@
     {"id":{"name":"load_word_list_txt_optimized","path":"scripts/load_word_list_txt_optimized/load_word_list_txt_optimized.yy",},},
     {"id":{"name":"play_letter_sound","path":"scripts/play_letter_sound/play_letter_sound.yy",},},
     {"id":{"name":"Print","path":"scripts/Print/Print.yy",},},
+    {"id":{"name":"recycle_hand_tiles","path":"scripts/recycle_hand_tiles/recycle_hand_tiles.yy",},},
     {"id":{"name":"RetryGame","path":"scripts/RetryGame/RetryGame.yy",},},
     {"id":{"name":"Scaling","path":"scripts/Scaling/Scaling.yy",},},
     {"id":{"name":"scr_tilebag","path":"scripts/scr_tilebag/scr_tilebag.yy",},},

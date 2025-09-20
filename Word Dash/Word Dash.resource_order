@@ -108,6 +108,7 @@
     {"name":"load_all_words","order":2,"path":"scripts/load_all_words/load_all_words.yy",},
     {"name":"load_word_list_txt_optimized","order":1,"path":"scripts/load_word_list_txt_optimized/load_word_list_txt_optimized.yy",},
     {"name":"play_letter_sound","order":11,"path":"scripts/play_letter_sound/play_letter_sound.yy",},
+    {"name":"recycle_hand_tiles","order":14,"path":"scripts/recycle_hand_tiles/recycle_hand_tiles.yy",},
     {"name":"RetryGame","order":3,"path":"scripts/RetryGame/RetryGame.yy",},
     {"name":"Scaling","order":5,"path":"scripts/Scaling/Scaling.yy",},
     {"name":"scr_tilebag","order":4,"path":"scripts/scr_tilebag/scr_tilebag.yy",},

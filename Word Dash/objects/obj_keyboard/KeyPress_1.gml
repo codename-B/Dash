@@ -11,7 +11,7 @@ if (!is_real(k)) k = 0;
 // Try using keyboard_check_pressed for special keys first
 if (keyboard_check_pressed(vk_enter)) {
     show_debug_message("Enter detected via keyboard_check_pressed");
-    ui_activate_confirm();
+    ui_activate_confirm()
     return;
 }
 
@@ -19,7 +19,8 @@ if (keyboard_check_pressed(vk_backspace)) {
     show_debug_message("Backspace detected via keyboard_check_pressed");
     global.backspace_initial_time = current_time;
     global.backspace_last_time = current_time;
-    ui_activate_reset();
+    recycle_hand_tiles()
+	audio_play_sound(Ding, 1.0, false);
     return;
 }
 

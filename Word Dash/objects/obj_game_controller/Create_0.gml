@@ -180,7 +180,7 @@ _confirm.setCallback(UI_EVENT.LEFT_RELEASE, method(_confirm, function() {
 // Add callback for reset button
 _reset.setCallback(UI_EVENT.LEFT_RELEASE, method(_reset, function() {
 	audio_play_sound(Ding, 1.0, false);
-    draw_new_tiles()
+    recycle_hand_tiles()
 }));
 
 // reset (bottom-right)
